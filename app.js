@@ -7,6 +7,7 @@ const   http = require("http");
 		passport = require("cors");
 		errorhandler = require("errorhandler");
 		morgan=require('morgan')
+		router=require('./routes')
 
 let isProduction = process.env.NODE_ENV == "production";
 
@@ -14,6 +15,7 @@ let app = express();
 app.use(morgan('dev'))
 
 app.use(cors());
+app.use(router)
 
 let server = app.listen(process.env.PORT || 3000, () => {
   console.log(`listenning to port ${server.address().port}`);

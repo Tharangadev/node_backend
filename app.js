@@ -8,8 +8,20 @@ const   http = require("http");
 		errorhandler = require("errorhandler");
 		morgan=require('morgan')
 		router=require('./routes')
+		dotenv=require('dotenv')
+		admin=require('firebase-admin')
+		
 
-let isProduction = process.env.NODE_ENV == "production";
+let isProduction = process.env.NODE_ENV == "production"
+dotenv.config()
+
+///firebase config 
+admin.initializeApp({
+	credentials:admin.credentials.cert({
+		
+	}),
+	databaseUrl:'http:///node-hosting-96d5a.firebaseio.com'
+})
 
 let app = express();
 app.use(morgan('dev'))

@@ -1,0 +1,14 @@
+## api links
+
+/api
+    /user/
+        / [put] ----- edit  user
+        /login [post] -------login
+        /users [post] -------- register
+    
+    /Profile/
+        /:username [get] ---- 
+
+
+    
+    /

@@ -1,7 +1,5 @@
 var router=require('express').Router()
 
-router.use('/api',(req,res,next)=>{
-    console.log(res)
-})
+router.use('/api',require('./api'))
 
 module.exports =router
